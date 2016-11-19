@@ -25,6 +25,7 @@ AUTH_USER_MODEL = 'member.MyUser'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '8@@(c94lb-mxlba%fz+s-lqujc9ld3ndo(@cxtr%bzb+o_gb%s'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -33,9 +34,14 @@ if DEBUG:
 
 ALLOWED_HOSTS = []
 
+# DRF
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+    )
+}
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
