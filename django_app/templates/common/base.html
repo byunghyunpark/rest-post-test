@@ -1,0 +1,29 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+  <script src ="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+
+  <title>rest-post</title>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="{% url 'post_view:post_list' %}">홈으로</a></li>
+      <li>로그인</li>
+      <li>로그아웃</li>
+      <li>회원가입</li>
+    </ul>
+  </nav>
+  {% block content %}
+  {% endblock %}
+</body>
+</html>

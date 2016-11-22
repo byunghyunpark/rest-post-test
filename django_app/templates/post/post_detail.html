@@ -1,0 +1,20 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+
+<p>작성일: {{ post.created_date }}</p>
+<p>글제목: {{ post.title }}</p>
+<p>작성자: {{ post.author }}</p>
+<p>내용: {{ post.content }}</p>
+
+{% for comment in post.comment_set.all %}
+<p>댓글: {{ comment.content }} / {{ comment.author }} / {{ comment.created_date }}</p>
+{% endfor %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">저장</button>
+</form>
+
+{% endblock %}
