@@ -1,12 +1,12 @@
 {% extends 'common/base.html' %}
 
 {% block content %}
-
+<a href="{% url 'post_view:post_add' %}">글작성</a>
 {% for post in posts %}
-    <div class="post">
-        <h1><a href="{% url 'post_view:post_detail' pk=post.pk %}">{{ post.title }}</a></a></h1>
-        <p>{{ post.content|linebreaksbr|truncatewords:50 }}</p>
-    </div>
+<div class="post">
+    <h1><a href="{% url 'post_view:post_detail' pk=post.pk %}">{{ post.title }}</a></a></h1>
+    <p>{{ post.content|linebreaksbr|truncatewords:50 }}</p>
+</div>
 {% endfor %}
 
 {% endblock %}
